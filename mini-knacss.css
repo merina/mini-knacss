@@ -1,0 +1,603 @@
+/*==================== Mini Knacss ====================*/
+/* Index - Mini Knacss
+––––––––––––––––––––––
+- Soft reset
+- Browsers consticency
+- "Line" and "Mod
+- Tables and inline-block
+- Grid & Autogrid
+- Table
+- Form
+- Typography
+- Links
+- List
+- Alignement
+*/
+/* Soft reset
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* switching box model for all elements */
+* {
+    -webkit-box-sizing :border-box;
+    -moz-box-sizing :border-box;
+    box-sizing :border-box;
+}
+html,
+body {
+    margin :0;
+    padding :0;
+}
+ul,
+ol {
+    padding-left :2em;
+}
+ul.unstyled {
+    list-style :none;
+}
+img {
+    height :auto;
+    border :0;
+    vertical-align :middle;
+}
+blockquote,
+figure {
+    margin-right :0;
+    margin-left :0;
+}
+audio,
+canvas,
+video {
+    display :inline-block;
+}
+svg:not(:root) {
+    overflow :hidden;
+}
+
+/* Browsers consticency
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* avoid top margins on first content element */
+p:first-child,
+.p-like:first-child,
+ul:first-child,
+ol:first-child,
+dl:first-child,
+blockquote:first-child,
+pre:first-child,
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child,
+h5:first-child,
+h6:first-child {
+    margin-top :0;
+}
+/* avoid margins on nested elements */
+li p,
+li .p-like,
+li ul,
+li ol {
+    margin-top :0;
+    margin-bottom :0;
+}
+/* max values */
+img,
+table,
+td,
+blockquote,
+code,
+pre,
+textarea,
+input,
+video {
+    max-width :100%;
+}
+table {
+    margin-bottom :20px;
+}
+
+/* "Line" and "Mod
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* module, gains superpower "BFC" Block Formating Context */
+.mod {
+    overflow :hidden;
+}
+/* blocks that needs to be placed under floats */
+.clear,
+.line,
+.row {
+    clear :both;
+}
+/* blocks that must contain floats */
+.clearfix:after,
+.line:after {
+    content :"";
+    display :table;
+    clear :both;
+    border-collapse :collapse;
+}
+
+/* Tables and inline-block
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* table layout */
+.row {
+    display :table;
+    width :100%;
+    table-layout :fixed;
+}
+.row>*,
+.col {
+    display :table-cell;
+    vertical-align :top;
+}
+/* inline-block */
+.inbl {
+    display :inline-block;
+    vertical-align :top;
+}
+
+/* Grid & Autogrid
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.grid {
+    overflow :hidden;
+}
+.grid>* {
+    display :block;
+    margin-left :-20px;
+    padding :0;
+    text-align :left;
+}
+.grid>*>* {
+    display :inline-block;
+    margin-left :0;
+    padding-left :20px;
+    vertical-align :top;
+}
+.opera:-o-prefocus,
+.grid>* {
+    word-spacing :-0.43em;
+}
+.grid2>* {
+    width :50%;
+}
+.grid3>* {
+    width :33.333%;
+}
+.grid4>* {
+    width :25%;
+}
+.grid5>* {
+    width :20%;
+}
+.grid6>* {
+    width :16.667%;
+}
+.grid8>* {
+    width :12.5%;
+}
+.grid10>* {
+    width :10%;
+}
+.grid12>* {
+    width :8.333%;
+}
+.grid2-1>*:first-child,
+.grid1-2>*+* {
+    width :66.666%;
+}
+.grid1-2>*:first-child,
+.grid2-1>*+* {
+    width :33.333%;
+}
+.grid1-3>*:first-child,
+.grid3-1>*+* {
+    width :25%;
+}
+.grid3-1>*:first-child,
+.grid1-3>*+* {
+    width :75%;
+}
+[class*="autogrid"] {
+    text-align :justify;
+}
+[class*="autogrid"]:after {
+    content :"";
+    display :inline-block;
+    width :100%;
+}
+[class*="autogrid"]>* {
+    display :inline-block;
+    text-align :left;
+    vertical-align :top;
+}
+[class*="autogrid"]:-o-prefocus {
+    word-spacing :-0.43em;
+}
+.autogrid2>* {
+    width :49%;
+}
+.autogrid3>* {
+    width :32%;
+}
+.autogrid4>* {
+    width :23.6%;
+}
+.autogrid5>* {
+    width :19%;
+}
+.autogrid6>* {
+    width :15%;
+}
+.autogrid8>* {
+    width :10.8%;
+}
+.autogrid10>* {
+    width :9%;
+}
+.autogrid12>* {
+    width :6.4%;
+}
+
+/* Table
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+table,
+.table {
+    width :100%;
+    max-width :100%;
+    border :1px solid #ccc;
+    border-collapse :collapse;
+    table-layout :fixed;
+    vertical-align :top;
+}
+.table {
+    display :table;
+}
+table#recaptcha_table,
+table.table-auto {
+    table-layout :auto;
+}
+caption {
+    padding :10px;
+    font-style :italic;
+    color :#555;
+}
+td,
+th {
+    padding :0.3em 0.8em;
+    min-width :20px;
+    border :1px #aaa dotted;
+    text-align :left;
+    vertical-align :top;
+    cursor :default;
+}
+
+/* Form
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+form,
+fieldset {
+    border :none;
+}
+input,
+button,
+select,
+label,
+.btn {
+    font-family :inherit;
+    font-size :inherit;
+    vertical-align :middle;
+}
+label {
+    display :inline-block;
+    vertical-align :middle;
+    cursor :pointer;
+}
+legend {
+    border :0;
+    white-space :normal;
+}
+textarea {
+    min-height :5em;
+    font-family :inherit;
+    font-size :inherit;
+    vertical-align :top;
+    resize :vertical;
+}
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance :button;
+    cursor :pointer;
+}
+input[type="search"] {
+    -webkit-appearance :textfield;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+    display :none;
+}
+::-webkit-input-placeholder {
+    color :#777;
+}
+input:-moz-placeholder,
+textarea:-moz-placeholder {
+    color :#777;
+}
+button::-moz-focus-inner,
+input[type='button']::-moz-focus-inner,
+input[type='reset']::-moz-focus-inner,
+input[type='submit']::-moz-focus-inner {
+    padding :0;
+    border :0;
+}
+
+/* Global HTML & size control
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+html {
+    font-size :62.5%;
+    font-size :-webkit-calc(.625em);
+    font-size :calc(.625em);
+    -webkit-text-size-adjust :100%;
+    -ms-text-size-adjust :100%;
+}
+/* whitespace fixing for modern browsers including IE9+ */
+:root .grid {
+    font-size :0;
+    text-justify :distribute-all-lines;
+}
+:root .grid > * > * {
+    font-size :16px;
+    font-size :1.6rem;
+}
+/* whitespace fixing for modern browsers including IE9+ */
+:root [class*="autogrid"] {
+    font-size :0;
+    text-justify :distribute-all-lines;
+}
+:root [class*="autogrid"]>* {
+    font-size :16px;
+    font-size :1.6rem;
+}
+body {
+    font-family :"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size :1.6rem;
+    line-height :1.6;
+    color :#171717;
+    background :#C6B696;
+    -webkit-background-size :cover;
+    -moz-background-size :cover;
+    background-size :cover;
+    -o-background-size :cover;
+}
+hr {
+    display :block;
+    clear :both;
+    height :1px;
+    margin :1em 0 2em;
+    padding :0;
+    border :0;
+    color :#ccc;
+    background-color :#ccc;
+}
+
+/* Typography
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.smallfont {
+    font-size :1.2rem;
+}
+.normalfont {
+    font-size :1.6rem;
+}
+p,
+.p-like,
+ul,
+ol,
+dl,
+blockquote,
+pre,
+td,
+th,
+label,
+textarea,
+caption,
+details,
+figure {
+    margin-top :1em;
+    margin-bottom :0;
+    line-height :1.5;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family :'Arial',sans-serif;
+    font-weight :300;
+    color :#575656;
+}
+h2.site-description {
+    font-size :1.2rem;
+    font-weight :300;
+}
+h1 {
+    font-size :3.2rem;
+}
+h2 {
+    font-size :2.8rem;
+}
+h3 {
+    font-size :2.4rem;
+}
+h4 {
+    font-size :2rem;
+}
+h5 {
+    font-size :1.8rem;
+}
+h6 {
+    font-size :1.6rem;
+}
+code,
+pre,
+samp,
+kbd {
+    font-family :Consolas,'DejaVu Sans Mono',Courier,monospace;
+    line-height :normal;
+    white-space :pre-line;
+    white-space :pre-wrap;
+}
+pre {
+    position :relative;
+    margin-bottom :1em;
+    padding :1em;
+    max-width :100%;
+    -webkit-border-radius :4px;
+    -moz-border-radius :4px;
+    border-radius :4px;
+    overflow :auto;
+    background :#EEE;
+    -ms-word-wrap :normal;
+    word-wrap :normal;
+}
+em,
+.italic,
+address,
+cite,
+dfn,
+i,
+var {
+    font-style :italic;
+}
+strong,
+.bold {
+    font-weight :bold;
+}
+small,
+sub,
+sup {
+    font-size :smaller;
+}
+p {
+    margin-bottom :1.25em;
+}
+.entry-content p {
+    text-align :left;
+}
+blockquote {
+    clear :both;
+    margin :1.5em;
+    padding-left :3.5em;
+    min-height :53px;
+    border-left :1px solid #ccc;
+    text-align :left;
+    font-size :1.8rem;
+    font-style :italic;
+    font-weight :700;
+    letter-spacing :-1px;
+}
+
+/* Links
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+a {
+    text-decoration :none;
+    color :#7D7F05;
+}
+a:hover,
+a:focus,
+a:active {
+    text-decoration :underline;
+    color :#7D7F05;
+}
+
+/* List
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+ul {
+    list-style :disc;
+}
+dt {
+    font-weight :bold;
+}
+dd {
+    margin :0 1em 1em;
+}
+
+/* Alignement
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Left */
+.left,
+.alignleft {
+    float :left;
+}
+.wp-caption.alignleft {
+    margin-top :10px;
+    margin-right :25px;
+}
+.alignleft,
+img.alignleft {
+    margin :8px 25px 8px 0;
+}
+/* Right */
+.right,
+.alignright {
+    float :right;
+}
+.wp-caption.alignright {
+    margin-top :10px;
+    margin-left :25px;
+}
+.alignright,
+img.alignright {
+    margin :8px 0 8px 25px;
+}
+/* Center */
+.aligncenter {
+    display :block;
+    clear :both;
+    margin-right :auto;
+    margin-left :auto;
+}
+.aligncenter img {
+    margin :0 auto;
+}
+
+/*====================== WORDPRESS =======================*/
+/* WP img
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.entry-content img,
+img[class*="align"],
+img[class*="wp-image-"],
+img[class*="attachment-"],
+img.size-full,
+img.size-large,
+.wp-post-image,
+figure,
+.wp-caption {
+    height :auto;
+    max-width :100%;
+}
+.wp-caption-text {
+    padding :0.25em 0;
+    border :1px solid #e5e5e5;
+    text-align :center;
+    font-size :1.4rem;
+    font-style :italic;
+    background :#e5e5e5;
+}
+
+/* WP WP Gallery
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.gallery {
+    display :inline-block;
+    margin-bottom :10px;
+}
+figure.gallery-item {
+    float :left;
+    margin-top :0.75em;
+    padding-right :0.75em;
+}
+
+
+/*====================== SMACSS METHODE =======================*/
+/* Layout
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
