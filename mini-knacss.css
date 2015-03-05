@@ -646,6 +646,10 @@ img.alignright {
 
 /* Wp Gallery
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+figure.gallery-item { /*reset default figure margin for WP gallery*/
+    margin-top: 0;
+}
+
 .gallery {
   margin-bottom: 1.25em;
 }
