@@ -96,9 +96,20 @@ video {
     max-width :100%;
 }
 table {
-    margin-bottom :20px;
+    margin-bottom: 20px;
 }
-
+/* Google Gmap3 bug fix on images */
+.gm-style img {
+    height: 100%;
+}
+:not(.gm-style) img {
+    height: auto;
+}
+.gm-style img,
+.gmnoscreen img,
+.gmnoprint img {
+    max-width: none !important;
+}
 /* "Line" and "Mod
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* module, gains superpower "BFC" Block Formating Context */
@@ -646,7 +657,7 @@ img.alignright {
 
 /* Wp Gallery
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-figure.gallery-item { /*reset default figure margin for WP gallery*/
+figure.gallery-item {
     margin-top: 0;
 }
 
