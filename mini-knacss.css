@@ -967,3 +967,7 @@ figure,
 		width: 100%;
 	}
 }
+/*--- Test version --*/
+.test {
+    background: #ccc;
+} 
